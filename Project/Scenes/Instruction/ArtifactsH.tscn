@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Music/UnderWater.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Buttons/resume_Icon.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/ChangeSceneButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/Xanh_Mono/XanhMono-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Gems and Jewls/jwel.png" type="Texture" id=6]
+[ext_resource path="res://Gems and Jewls/gem.png" type="Texture" id=7]
+[ext_resource path="res://Gems and Jewls/crystal.png" type="Texture" id=8]
+[ext_resource path="res://Fonts/Audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 10
+font_data = ExtResource( 9 )
+
+[node name="Artifacts" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_horizontal_guides_": [ 180.418 ],
+"_edit_use_anchors_": false
+}
+
+[node name="Backgound" parent="." instance=ExtResource( 4 )]
+
+[node name="WallTile" parent="Backgound" index="1"]
+tile_data = PoolIntArray(  )
+
+[node name="Label1" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 1.0
+margin_top = 5.0
+margin_right = 1.0
+margin_bottom = 149.0
+custom_fonts/font = SubResource( 1 )
+text = "Collect all the Jewls Gems and Crystals that appear to get different power ups
+But remember You will not be able to use power ups in the boss level
+After Each level all the power ups you buy will reset to zero and you can use Only one power so buy carefully"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" parent="." instance=ExtResource( 3 )]
+margin_left = 250.0
+margin_top = 141.0
+margin_right = 310.0
+margin_bottom = 170.0
+custom_fonts/font = SubResource( 2 )
+text = "Next"
+icon = ExtResource( 2 )
+expand_icon = true
+scene = "res://Scenes/Instruction/Armor BreakH.tscn"
+reset_score = false
+reset_global_score = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = 2.0
+autoplay = true
+
+[node name="crystal" type="Sprite" parent="."]
+position = Vector2( 39, 76 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 8 )
+
+[node name="gem" type="Sprite" parent="."]
+position = Vector2( 279, 76 )
+scale = Vector2( 0.08, 0.08 )
+texture = ExtResource( 7 )
+
+[node name="jwel" type="Sprite" parent="."]
+position = Vector2( 163, 157 )
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 6 )
+
+[editable path="Backgound"]

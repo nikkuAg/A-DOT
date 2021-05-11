@@ -1,0 +1,224 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Scripts/HealthUi.gd" type="Script" id=1]
+[ext_resource path="res://Resources/UI/HeartUIFull.png" type="Texture" id=2]
+[ext_resource path="res://Resources/UI/HeartUIEmpty.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/ChangeSceneButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/Audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Fonts/Special_Elite/SpecialElite-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Buttons/Pause_Icon.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/Stalinist_One/StalinistOne-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Buttons/Home_Icon.png" type="Texture" id=9]
+[ext_resource path="res://Buttons/resume_Icon.png" type="Texture" id=10]
+[ext_resource path="res://Buttons/retry_Icon.png" type="Texture" id=11]
+[ext_resource path="res://Keys/Left.png" type="Texture" id=12]
+[ext_resource path="res://Keys/Down.png" type="Texture" id=13]
+[ext_resource path="res://Keys/Attack.png" type="Texture" id=14]
+[ext_resource path="res://Keys/Up_Pressed.png" type="Texture" id=15]
+[ext_resource path="res://Keys/Right_Pressed.png" type="Texture" id=16]
+[ext_resource path="res://Keys/Right.png" type="Texture" id=17]
+[ext_resource path="res://Keys/Left_Pressed.png" type="Texture" id=18]
+[ext_resource path="res://Keys/Up.png" type="Texture" id=19]
+[ext_resource path="res://Keys/Down_Pressed.png" type="Texture" id=20]
+[ext_resource path="res://Keys/Attack_Pressed.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/FreezePU.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Invincible.tscn" type="PackedScene" id=23]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+font_data = ExtResource( 5 )
+
+[node name="UI" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeartUiEmpty" type="TextureRect" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 64.0
+margin_bottom = 16.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeartUiFull" type="TextureRect" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 64.0
+margin_bottom = 16.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -107.79
+margin_top = 13.3125
+margin_right = -3.78979
+margin_bottom = 49.3125
+custom_fonts/font = SubResource( 1 )
+text = "Score:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -15.0
+margin_top = 1.0
+margin_right = 8.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.5, 0.25 )
+texture_normal = ExtResource( 7 )
+expand = true
+
+[node name="Up" type="TouchScreenButton" parent="."]
+position = Vector2( 45, 86.445 )
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 19 )
+pressed = ExtResource( 15 )
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2( 15, 114 )
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 18 )
+
+[node name="Down" type="TouchScreenButton" parent="."]
+position = Vector2( 44.6674, 141 )
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 13 )
+pressed = ExtResource( 20 )
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2( 73, 114 )
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 17 )
+pressed = ExtResource( 16 )
+
+[node name="Attack" type="TouchScreenButton" parent="."]
+position = Vector2( 271, 110.5 )
+scale = Vector2( 0.06, 0.06 )
+normal = ExtResource( 14 )
+pressed = ExtResource( 21 )
+
+[node name="Freeze" parent="." instance=ExtResource( 22 )]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -26.0
+margin_right = -6.0
+margin_bottom = -10.0
+
+[node name="Invincible" parent="." instance=ExtResource( 23 )]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -10.0
+margin_right = -6.0
+margin_bottom = 6.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -20.0
+color = Color( 0, 0.976471, 1, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paused" type="Label" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -60.0
+margin_right = 112.0
+margin_bottom = -34.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.984314, 0, 1 )
+text = "Paused"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Button" parent="ColorRect"]
+margin_left = 14.0
+margin_top = 46.0
+margin_right = 96.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 1, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Resume"
+icon = ExtResource( 10 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" parent="ColorRect" instance=ExtResource( 4 )]
+margin_left = 130.0
+margin_top = 46.0
+margin_right = 211.0
+margin_bottom = 82.0
+custom_colors/font_color = Color( 0, 1, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Retry"
+icon = ExtResource( 11 )
+expand_icon = true
+
+[node name="Main Menu" parent="ColorRect" instance=ExtResource( 4 )]
+margin_left = 49.0
+margin_top = 89.0
+margin_right = 174.0
+margin_bottom = 125.0
+custom_colors/font_color = Color( 0, 1, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Main Menu"
+icon = ExtResource( 9 )
+expand_icon = true
+scene = "res://Scenes/Main.tscn"
+[connection signal="button_up" from="PauseButton" to="." method="_on_PauseButton_button_up"]
+[connection signal="pressed" from="Up" to="." method="_on_Up_pressed"]
+[connection signal="released" from="Up" to="." method="_on_Up_released"]
+[connection signal="pressed" from="Left" to="." method="_on_Left_pressed"]
+[connection signal="released" from="Left" to="." method="_on_Left_released"]
+[connection signal="pressed" from="Down" to="." method="_on_Down_pressed"]
+[connection signal="released" from="Down" to="." method="_on_Down_released"]
+[connection signal="pressed" from="Right" to="." method="_on_Right_pressed"]
+[connection signal="released" from="Right" to="." method="_on_Right_released"]
+[connection signal="pressed" from="Attack" to="." method="_on_Attack_pressed"]
+[connection signal="released" from="Attack" to="." method="_on_Attack_released"]
+[connection signal="button_up" from="ColorRect/Resume" to="." method="_on_Resume_button_up"]

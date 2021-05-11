@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Music/Coin.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Gems and Jewls/gem.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Crystal.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Jump"
+length = 1.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 0.54 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -4 ), Vector2( 0, 3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionPolygon2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Picked"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionPolygon2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ null ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="Gem" type="Area2D"]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 128
+collision_mask = 0
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 4.99203, 8.27692, 5.19438, 7.74256, 5.23375, 6.83699, 6.41493, 5.97079, 7.00552, 4.51401, 8.10795, 1.67919, 7.98983, -0.60442, 7.28113, -2.37618, 5.95123, -4.83372, 5.35577, -5.91372, 5.09061, -6.95228, 4.67076, -7.32793, 3.69849, -7.41632, 2.43896, -6.77551, 1.42249, -5.82533, 1.62137, -6.99648, 1.55507, -7.28374, 0.715385, -7.15116, -0.544148, -6.42195, -0.919799, -6.44405, -1.61403, -7.79224, -1.98565, -7.97806, -2.50593, -7.34629, -2.65458, -7.68076, -2.8404, -7.79224, -3.1377, -7.01183, -3.80663, -7.79224, -4.06677, -7.27197, -4.32691, -7.68076, -4.84718, -7.49494, -4.81002, -7.75508, -5.6276, -7.68076, -6.29653, -8.2382, -6.59383, -6.60304, -6.85397, -6.30573, -6.70532, -5.93411, -7.18843, -5.41383, -7.11411, -4.59625, -7.56006, -4.1503, -7.07695, -3.36988, -7.29992, -2.99825, -7.85736, -2.5523, -7.07695, -1.84621, -8.1175, -1.21444, -7.96885, -0.694164, -6.9283, -0.211049, -7.8202, 1.57276, -7.67155, 1.90723, -5.44179, 1.87006, -1.76268, 5.25187, 1.58197, 7.25866 )
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Jump = SubResource( 1 )
+anims/Picked = SubResource( 2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -15.0
+[connection signal="body_entered" from="." to="." method="_on_Crystal_body_entered"]
