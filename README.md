@@ -28,5 +28,5 @@ Trailer video of the game is available on YouTube. Watch it [here](https://www.y
 	* [File 2](https://github.com/IITian20/A-DOT/raw/master/Windows/A%20DOT.pck)
   <br>
   
-  <pre>After downloading both the files open the file with extension .exe to play the game.</pre>
+  <pre>For Windows, after downloading both the files open the file with extension .exe to play the game.</pre>
 
