@@ -24,6 +24,8 @@ Trailer video of the game is available on YouTube. Watch it [here](https://www.y
 ### Download
 - To download game for Android [click here](https://github.com/IITian20/A-DOT/raw/master/Android/A%20DOT.apk)
 - To download game for Windows download both files:
-	* [File 1](https://github.com/IITian20/A-DOT/raw/master/Windows/A%20DOT.exe) - open to play the game
+	* [File 1](https://github.com/IITian20/A-DOT/raw/master/Windows/A%20DOT.exe)
 	* [File 2](https://github.com/IITian20/A-DOT/raw/master/Windows/A%20DOT.pck)
+  <br>
+  <pre>After downloading both the files open the file with extension .exe to<br>play the game.
 
