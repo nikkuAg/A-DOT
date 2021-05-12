@@ -1,2 +1,1 @@
-# A-DOT
-### A Desire of Treasure
+# A-DOT ### A Desire of Treasure
