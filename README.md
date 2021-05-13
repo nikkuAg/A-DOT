@@ -1,7 +1,7 @@
 # A DOT.
 
 <p align="center">
-	<img src="/Project/Game_Icon.png">
+	<img src="/Project/Game_Icon.png" width="150px">
 </p>
 
 A DOT (A Desire of Treasure) is a treasure hunt game, using Godot Game Engine, based in a sea fantasy world, in which you will find a map of a very precious treasure. On the way to treasure you find various creatures whom you have to defeat and find the key to treasure.
