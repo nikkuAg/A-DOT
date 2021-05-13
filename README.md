@@ -1,7 +1,7 @@
 # A DOT.
 
 <p align="center">
-	<img src="https://github.com/IITian20/A-DOT/blob/master/Project/Game_Icon.png?raw=true" width="150px">
+	<img src="/Project/Game_Icon.png">
 </p>
 
 A DOT (A Desire of Treasure) is a treasure hunt game, using Godot Game Engine, based in a sea fantasy world, in which you will find a map of a very precious treasure. On the way to treasure you find various creatures whom you have to defeat and find the key to treasure.
@@ -15,11 +15,11 @@ A DOT (A Desire of Treasure) is a treasure hunt game, using Godot Game Engine, b
 ### DEMO
 Trailer video of the game is available on YouTube. Watch it [here](https://www.youtube.com/watch?v=Gh4qMadVl_s)
 <br><br>
-<img src="https://github.com/IITian20/A-DOT/blob/master/Game_Shots/Pic1.png?raw=true" width=300px>
+<img src="/Game_Shots/Pic1.png" width=300px>
 <br>
-<img src="https://github.com/IITian20/A-DOT/blob/master/Game_Shots/Pic2.png?raw=true" width=300px>
+<img src="Game_Shots/Pic2.png" width=300px>
 <br>
-<img src="https://github.com/IITian20/A-DOT/blob/master/Game_Shots/Pic3.jpg?raw=true" width=300px>
+<img src="/Game_Shots/Pic3.jpg" width=300px>
 
 ### Download
 - To download game for Android [click here](https://github.com/IITian20/A-DOT/raw/master/Android/A%20DOT.apk)
@@ -36,7 +36,7 @@ Trailer video of the game is available on YouTube. Watch it [here](https://www.y
 To contribute to the project you first have to download Godot Game Engine. 
 - [Click here](https://godotengine.org/download) to download the Godot game engine.
 - After cloning the repo in your local, open Godot Game Engine
-- Click on the Import.<br><img src="https://github.com/IITian20/A-DOT/blob/master/Game_Shots/Godot.jpg?raw=true" width="300px"> 
+- Click on the Import.<br><img src="/Game_Shots/Godot.jpg" width="300px"> 
 - Select the file project.godot from the folder Project.
 - Click on Import and Edit.
 
